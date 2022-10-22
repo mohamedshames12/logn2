@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300;1,400&display=swap');
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #403d39;
+}
+
+.box{
+    position: relative;
+    background-color: #000814;
+    width: 380px;
+    height: 440px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before{
+    content:"" ;
+    position: absolute;
+    top: -210px;
+    left: -200px;
+    width: 380px;
+    height: 440px;
+    background: linear-gradient(0deg,transparent, #5465ff, #5465ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+.box::after{
+    content:"" ;
+    position: absolute;
+    top: -210px;
+    left: -200px;
+    width: 380px;
+    height: 440px;
+    background: linear-gradient(0deg,transparent, #5465ff, #5465ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+form{
+    inset: 2px;
+    background: #000814;
+    position: absolute;
+    z-index: 10;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px;
+}
+
+form h1{
+    text-align: center;
+    color: #5465ff;
+    letter-spacing: 2px;
+ 
+
+}
+
+.boxinput{
+    position: relative;
+    margin-top: 35px;
+    width: 300px;
+    color: #000814;
+   
+
+}
+
+.boxinput input{
+   position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    outline: none; /* important for me */
+    color: #000814;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10000;
+}
+
+.boxinput span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #403d39;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+
+}
+
+.boxinput input:valid ~ span,
+.boxinput input:focus ~ span{
+    color: #5465ff;
+    transform:  translateX(0px) translateY(-33px);
+    font-size: 0.75em;
+    
+}
+
+.boxinput i {
+    z-index: 9;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #5465ff;
+    border-radius: 5px; 
+    transition: .5s;
+    pointer-events: none;
+    
+}
+
+.boxinput input:valid ~ i,
+.boxinput input:focus ~ i{
+    height: 42px;
+
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.links a{
+    color: #403d39;
+    text-decoration: none;
+}
+
+.links a:hover,
+.links a:nth-of-type(2){
+    color: #5465ff;
+}
+
+input[type="submit"]{
+    background-color: #403d39;
+    padding: 15px 20px;
+    width: 120px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 20px;
+    background: #5465ff;
+
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background: #4a5cfc;
+    transition: .5s;
+}
+
+@media (max-width:500px) {
+    .box{
+        margin: 0 .3rem;
+    }
+}
